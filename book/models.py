@@ -10,7 +10,7 @@ class BookItem(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=100,blank=True)
+    title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     isbn = models.CharField(max_length=100,blank=True)
     writer = models.CharField(max_length=100,blank=True)
