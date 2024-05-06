@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/account/home/validate-phn" method="post">
+    {% csrf_token %}
+        <label for="country_code">Select Country Code:</label>
+        <select name="country_code" id="country_code">
+            <option value="US">United States</option>
+            <option value="GB">United Kingdom</option>
+            <option value="IN">India</option>
+            <!-- Add more country codes here -->
+        </select><br><br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number"><br><br>
+
+        <input type="submit" class="btn btn-primary mt-4" value="Validate">
+</form>
+
+
+{% endblock %}
