@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'your-dockerhub-credentials-id'
+        DOCKER_CREDENTIALS_ID = 'dockerhubid'
         DOCKER_IMAGE_NAME = 'anshoo/simple_crud'
         GIT_REPO_URL = 'https://github.com/anshoomishra/simple_crud.git'
     }
