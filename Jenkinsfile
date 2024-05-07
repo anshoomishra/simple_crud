@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'Username is $dockerhubid.USR'
                 script {
-                    docker.withRegistry('https://hub.docker.com/', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
                         docker.image(DOCKER_IMAGE_NAME).push('latest')
                     }
                 }
