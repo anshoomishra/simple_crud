@@ -22,14 +22,14 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image to Docker Hub') {
-            steps {
-                echo 'Username is ${DOCKER_CREDENTIALS_ID_USR}'
-                script {
-                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
-                        docker.image(DOCKER_IMAGE_NAME).push('latest')
-                    }
-                }
+        stage('login to dockerhub') {
+            steps{
+                sh 'echo $DOCKER_CREDENTIALS_ID_PSW | docker login -u $DOCKER_CREDENTIALS_ID_USR --password-stdin'
+            }
+        }
+        stage('push image') {
+            steps{
+                sh 'docker push $DOCKER_IMAGE_NAME:$BUILD_NUMBER'
             }
         }
     }
