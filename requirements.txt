@@ -3,3 +3,7 @@ Django==3.0.1
 djangorestframework==3.14.0
 pytz==2023.3.post1
 sqlparse==0.4.4
+django-phonenumber-field==7.3.0
+phonenumbers==8.13.36
+pytz==2023.3.post1
+sqlparse==0.4.4
