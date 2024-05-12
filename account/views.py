@@ -3,7 +3,7 @@ from django.views.generic import CreateView
 from account.forms import UserInfoForm
 from django.shortcuts import render
 import phonenumbers
-
+from django.http import JsonResponse
 # Create your views here.
 
 class UserCreateView(CreateView):
@@ -30,3 +30,6 @@ def validate_phone(request):
         return render(request, 'account/results.html', {'message': message})
 
     return render(request, 'account/home.html')
+def simple_message(request):
+    message = "Hello, this is a simple message from your Django API!"
+    return JsonResponse({'message': message})
